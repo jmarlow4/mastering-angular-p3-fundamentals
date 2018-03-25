@@ -33,10 +33,3 @@ Angular is put together in a very opinionated, yet modular way.
     * You can define navigation rules with a special service called a “route guard”, such as preventing a route from being accessed if a user isn’t authenticated
 
 Generate a "core" module with Angular-CLI
-```
-$ ng generate module core
-```
---or--
-```
-$ ng g m core
-```
