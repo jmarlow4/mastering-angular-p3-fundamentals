@@ -21,7 +21,7 @@ import { BrowserModule } from '@angular/platform-browser';
   /* Exported members of this module go here, not required */ 
   exports:      [ HomeComponent ],
 
-  /* If this is the root module, the root component goes here */
+  /* If this is the root module, the entry component goes here */
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
@@ -35,3 +35,10 @@ You'll often define and use many modules in your app, each containing components
 A component and its template together define a view. Views are arranged along "view hierarchies." It's this hierarchical structure of views that enables angular to detect and respond to user interactions and changes in data.
 
 ![](view-hierarchy.png)
+
+Let's create two modules, "core" and "auth." And don't forget to add them as imports to your root module, AppModule.
+```
+$ ng g m core
+
+$ ng g m auth
+```
