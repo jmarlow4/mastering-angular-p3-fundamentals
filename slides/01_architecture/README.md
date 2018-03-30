@@ -1,6 +1,11 @@
 # Part 3 - Angular Fundamentals
 ## 0 - Architecture Overview
 
+###################################################
+## QUICK NOTE ON HOW WE'RE TEACHING THE COURSE!!!##
+###################################################
+Repetition from simple to more complex, from overview into deep discourse
+
 Angular is put together in a very opinionated, yet modular way.
 
 * Modules package code into blocks of related functionality, best thought of as “features”
@@ -32,4 +37,8 @@ Angular is put together in a very opinionated, yet modular way.
     * Intercepts browser actions (such as clicking a link) and shows or hides different view hierarchies
     * You can define navigation rules with a special service called a “route guard”, such as preventing a route from being accessed if a user isn’t authenticated
 
-Generate a "core" module with Angular-CLI
+Generate two modules, "core" and "auth" with Angular-CLI. Remember to add them to the AppModule
+```
+  $ ng g m core
+  $ ng g m auth
+```
