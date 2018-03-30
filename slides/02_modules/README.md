@@ -37,8 +37,11 @@ A component and its template together define a view. Views are arranged along "v
 ![](view-hierarchy.png)
 
 Let's create two modules, "core" and "auth." And don't forget to add them as imports to your root module, AppModule.
-```
-$ ng g m core
 
-$ ng g m auth
+In fact, adding "-m app" to your "generate module" command makes sure to add the module to the list of imports in your "AppModule"
+
+```
+$ ng g m core -m app
+
+$ ng g m auth -m app
 ```
