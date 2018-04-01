@@ -1,10 +1,5 @@
 # Part 3 - Angular Fundamentals
-## 0 - Architecture Overview
-
-###################################################
-## QUICK NOTE ON HOW WE'RE TEACHING THE COURSE!!!##
-###################################################
-Repetition from simple to more complex, from overview into deep discourse
+## 1 - Architecture Overview
 
 Angular is put together in a very opinionated, yet modular way.
 

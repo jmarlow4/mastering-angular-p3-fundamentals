@@ -1,5 +1,5 @@
 # Part 3 - Angular Fundamentals
-## 1 - Modules
+## 2 - Modules
 
 NgModules are "decorated" classes that help us organize our code as closely related sets of functionality
 
