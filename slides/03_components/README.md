@@ -60,5 +60,5 @@ It's best practice to keep your components as "dumb" as possible. That means pus
 
 ### Let's make our first component and put it in our newly-created Auth module
 ```
-$ ng g c auth/components/login -m auth
+$ ng g c auth/components/auth-page -m auth
 ```
