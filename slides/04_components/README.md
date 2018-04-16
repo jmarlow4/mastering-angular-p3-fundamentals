@@ -1,5 +1,5 @@
 # Part 3 - Angular Fundamentals
-## 3 - Components
+## 4 - Components
 
 Components are best seen as miniature apps that do a single job. Components control views.
 
@@ -58,7 +58,8 @@ In the template, we use "interpolation" to do "property binding"
 
 It's best practice to keep your components as "dumb" as possible. That means pushing all of your business logic is accessed and called BY the component but doesn't exist in the component itself.
 
-### Let's make our first component and put it in our newly-created Auth module
+### Let's make our first component and put it in AppModule
 ```
-$ ng g c auth/components/auth-page -m auth
+$ ng g c components/nav-bar -m app
 ```
+

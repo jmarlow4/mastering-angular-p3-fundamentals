@@ -1,2 +1,2 @@
 # Part 3 - Angular Fundamentals
-## 12 - Observables
+## 7 - Data Binding
