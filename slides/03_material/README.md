@@ -27,7 +27,7 @@ $ ng g m app-material -m app
 
 ```
 // --- app-material.module.ts ---
-import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+import { MatToolbarModule, MatButtonModule, MatIconModule } from '@angular/material'
 
 const matModules = [
   MatToolbarModule,
@@ -36,8 +36,13 @@ const matModules = [
 ]
 
 @NgModule({
-  imports: matModules,
-  exports: matModules,
+  imports: [
+    CommonModule,
+    ...matModules
+  ],
+  declarations: [
+    ...matModules
+  ]
 })
 export class AppMaterialModule { }
 ```
