@@ -15,14 +15,19 @@ $ ng g m app-material -m app
 
 ```
 // --- app-material.module.ts ---
-import { MatToolbarModule, MatButtonModule, MatIconModule } from '@angular/material'
+import {
+  MatToolbarModule,
+  MatButtonModule,
+  MatIconModule,
+  MatMenuModule
+} from '@angular/material'
 
 const matModules = [
   MatToolbarModule,
   MatButtonModule,
-  MatIconModule
+  MatIconModule,
+  MatMenuModule
 ]
-
 @NgModule({
   imports: matModules,
   exports: matModules
@@ -45,7 +50,28 @@ import { AppMaterialModule } from './app-material/app-material.module'
 })
 ```
 
-Since we'll be using material icons, we're going to have to load the icon font into your application. There are many ways to do this, but the simplest is to add this line to the `<head>` element of your `index.html` file:
+We're going to need to import all of our styling for material. There are many ways to do this, but the best way I've found is to download them with npm (like we've done above) and include it in your `src/styles.scss` file:
 ```
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+// --- styles.scss ---
+@import '../node_modules/reset-css/_reset.scss';
+@import '../node_modules/material-design-icons/iconfont/material-icons.css';
+@import '../node_modules/@angular/material/prebuilt-themes/indigo-pink.css';
 ```
+
+To test it all out let's add the following angular-material code to the top of our `src/app/app.component.html` file:
+```
+// --- app.component.html ---
+<mat-toolbar color="primary" class="mat-elevation-z5">
+  <button mat-mini-fab color="accent" [matMenuTriggerFor]="menu">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>Item 1</button>
+    <button mat-menu-item>Item 2</button>
+  </mat-menu>
+</mat-toolbar>
+```
+
+Now run `ng serve` and check out your cool, new Material tool bar!
+
+Start the code up
