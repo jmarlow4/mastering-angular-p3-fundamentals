@@ -44,8 +44,8 @@ import { AppMaterialModule } from './app-material/app-material.module'
 @NgModule({
   imports: [
     ...,
-    AppMaterialModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AppMaterialModule
   ]
 })
 ```
@@ -53,8 +53,13 @@ import { AppMaterialModule } from './app-material/app-material.module'
 We're going to need to import all of our styling for material. There are many ways to do this, but the best way I've found is to download them with npm (like we've done above) and include it in your `src/styles.scss` file:
 ```
 // --- styles.scss ---
+// This resets the default browser CSS settings (like body and paragraph element padding)
 @import '../node_modules/reset-css/_reset.scss';
+
+// This let's sets up the Material Icon font face
 @import '../node_modules/material-design-icons/iconfont/material-icons.css';
+
+// This is one of 4 default, "pre-built" themes that comes with Angular Material. A basic color scheme is defined here.
 @import '../node_modules/@angular/material/prebuilt-themes/indigo-pink.css';
 ```
 
