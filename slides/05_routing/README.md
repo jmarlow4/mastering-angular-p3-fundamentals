@@ -13,6 +13,7 @@ Let's use that component as our "home" route in AppModule. We should create a "r
 "pathMatch: full" means to make sure the only trigger the redirect if the full url path is, in this case, '/', that is to say, the root path of the website.
 ```
 // --- app.module.ts ---
+
 @NgModule({
   imports: [
     ...,
@@ -32,6 +33,7 @@ $ ng g c auth/pages/auth-page -m auth
 Let's create a router in the Auth module (auth.module.ts) and put it in that module's imports.
 ```
 // --- auth.module.ts ---
+
 @NgModule({
   imports: [
     ...,
@@ -45,6 +47,7 @@ Let's create a router in the Auth module (auth.module.ts) and put it in that mod
 This "Auth" module is imported into the main "App" module, and so it's a "child" of the "App" module. This means that this route is added to the routes that exist in your main module. In order you make this work, you're going to have to make sure AuthModule is listed in your AppModule's imports metadata property.
 ```
 // --- app.module.ts ---
+
 @NgModule({
   ...
   imports: [

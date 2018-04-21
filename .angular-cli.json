@@ -5,7 +5,7 @@
   },
   "apps": [
     {
-      "root": "src",
+      "root": "src-scratch",
       "outDir": "dist",
       "assets": [
         "assets",

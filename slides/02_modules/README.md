@@ -4,6 +4,8 @@
 NgModules are "decorated" classes that help us organize our code as closely related sets of functionality
 
 ```
+// --- app.module.ts
+
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
