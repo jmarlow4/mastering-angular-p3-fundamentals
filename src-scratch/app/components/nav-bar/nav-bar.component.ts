@@ -1,15 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core'
 
 @Component({
   selector: 'ma-nav-bar',
   templateUrl: './nav-bar.component.html',
   styleUrls: ['./nav-bar.component.scss']
 })
-export class NavBarComponent implements OnInit {
+export class NavBarComponent {
 
-  constructor() { }
+  navLinks = [
+    { page: 'Home', linkPath: 'home' },
+    { page: 'Login', linkPath: 'login' }
+  ]
 
-  ngOnInit() {
+  onLogout() {
+    console.log('logging out!')
   }
-
 }

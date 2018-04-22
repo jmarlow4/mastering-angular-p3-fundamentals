@@ -73,18 +73,63 @@ It's best practice to keep your components as "dumb" as possible. That means pus
 $ ng g c components/nav-bar -m app
 ```
 
+Let's go into the nav-bar component class and define a `navLinks` property and a `onLogout` method:
+```
+// --- nav-bar.component.ts ---
+
+import { Component } from '@angular/core'
+
+@Component({
+  selector: 'ma-nav-bar',
+  templateUrl: './nav-bar.component.html',
+  styleUrls: ['./nav-bar.component.scss']
+})
+export class NavBarComponent {
+
+  navLinks = [
+    { page: 'Home', linkPath: 'home' },
+    { page: 'Login', linkPath: 'login' }
+  ]
+
+  onLogout() {
+    console.log('logging out!')
+  }
+}
+```
+
 We're going to move the code we wrote last video from `app.component.html` into this newly-created `nav-bar` component, and make a few changes. Be sure to remove the default generated `<p>` element from the nav-bar html template:
 ```
 // --- nav-bar.component.html
 
 <mat-toolbar color="primary" class="mat-elevation-z5">
-  <button mat-mini-fab color="accent" [matMenuTriggerFor]="menu">
-    <mat-icon>menu</mat-icon>
+
+  <a mat-button *ngFor="let link of navLinks">{{ link.page }}</a>
+
+  <div class="flex-spacer"></div>
+
+  <button mat-button [matMenuTriggerFor]="menu">
+    <mat-icon>more_vert</mat-icon>
   </button>
   <mat-menu #menu="matMenu">
-    <button mat-menu-item>Item 1</button>
-    <button mat-menu-item>Item 2</button>
+    <button mat-menu-item (click)="onLogout()">
+      <mat-icon>subdirectory_arrow_left</mat-icon>Logout
+    </button>
   </mat-menu>
+
 </mat-toolbar>
 ```
 
+Let's not forget to add a little bit of our own styling to our new nav-bar component:
+```
+// --- nav-bar.component.scss ---
+
+mat-toolbar {
+  height: 36px;
+  .flex-spacer {
+    flex: 1 1 auto;
+  }
+  mat-button {
+    border-radius: 0;
+  }
+}
+```
