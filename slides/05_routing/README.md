@@ -14,12 +14,14 @@ Let's use that component as our "home" route in AppModule. We should create a "r
 ```
 // --- app.module.ts ---
 
+import { RouterModule } from '@angular/router'
+
 @NgModule({
   imports: [
     ...,
     RouterModule.forRoot([
         { path: 'home', component: HomePageComponent },
-        { path '', redirectTo: 'home', pathMatch: 'full'}
+        { path: '', redirectTo: 'home', pathMatch: 'full'}
       ]),
     ...
   ],
@@ -56,3 +58,25 @@ This "Auth" module is imported into the main "App" module, and so it's a "child"
   ],
   ...
 ```
+
+We need to create a place for your pages to "route into." This is done with the `<router-outlet>` element. Add it undernead your navbar in your root component's template
+```
+// --- app.component.html ---
+
+<ma-nav-bar></ma-nav-bar>
+<router-outlet></router-outlet>
+```
+
+The last thing we need to make this work is to return to our `nav-bar` component template. We're going to change line 2 from a single line `*ngFor` statement into a multi-line statement, which uses it's navLinks property more fully:
+```
+// --- nav-bar.component.html ---
+
+<mat-toolbar color="primary" class="mat-elevation-z5">
+  <a mat-button
+     *ngFor="let link of navLinks"
+     [routerLink]="link.linkPath">{{ link.page }}</a>
+  <div class="flex-spacer"></div>
+  ...
+```
+
+Save your work and observe the page routes switch as you use the nav-bar's links!

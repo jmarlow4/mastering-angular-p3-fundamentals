@@ -1,5 +1,7 @@
 <mat-toolbar color="primary" class="mat-elevation-z5">
-  <a mat-button *ngFor="let link of navLinks">{{ link.page }}</a>
+  <a mat-button
+     *ngFor="let link of navLinks"
+     [routerLink]="link.linkPath">{{ link.page }}</a>
   <div class="flex-spacer"></div>
   <button mat-button [matMenuTriggerFor]="menu">
     <mat-icon>more_vert</mat-icon>

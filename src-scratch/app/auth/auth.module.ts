@@ -1,10 +1,16 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core'
+import { CommonModule } from '@angular/common'
+import { RouterModule } from '@angular/router'
+
+import { AuthPageComponent } from './pages/auth-page/auth-page.component'
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule.forChild([
+      { path: 'login', component: AuthPageComponent }
+    ]),
   ],
-  declarations: []
+  declarations: [AuthPageComponent]
 })
 export class AuthModule { }
