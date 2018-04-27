@@ -1,4 +1,5 @@
 import { Component } from '@angular/core'
+import { NgForm } from '@angular/forms'
 
 @Component({
   selector: 'ma-login-form',
@@ -9,8 +10,9 @@ export class LoginFormComponent {
 
   username: string
 
-  onSubmit(val: string): void {
-    console.log('onSubmit val', val)
+  onSubmit(val: NgForm): void {
+    console.log('username', val.controls.username.value)
+    console.log('password', val.controls.password.value)
   }
 
 }
