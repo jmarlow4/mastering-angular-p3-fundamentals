@@ -1,0 +1,21 @@
+<form>
+  <mat-form-field>
+    <input #username
+    matInput required name="username"
+    [(ngModel)]="username.value"
+    placeholder="username"
+    (keyup.enter)="onSubmit(username.value)">
+  </mat-form-field>
+  <br>username classes: {{username.className}}
+  <br>
+  <mat-form-field>
+    <input #password="ngModel" type="password"
+    matInput required name="password"
+    [(ngModel)]="password.value"
+    placeholder="password"
+    (keyup.enter)="onSubmit(password.value)">
+  </mat-form-field>
+  <div [hidden]="password.valid || password.pristine">
+      Password is required
+  </div>
+</form>
