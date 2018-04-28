@@ -1,17 +1,15 @@
 <form #myForm="ngForm" (submit)="onSubmit(myForm)">
   <mat-form-field>
-    <input matInput required name="username"
-    #username
-    [(ngModel)]="username.value"
-    placeholder="username">
+    <input matInput required minlength="6"
+    name="username" placeholder="username"
+    #username [(ngModel)]="username.value">
   </mat-form-field>
   <br>
   <mat-form-field>
-    <input matInput required name="password" type="password"
-    #password
-    [(ngModel)]="password.value"
-    placeholder="password">
+    <input matInput required minlength="6"
+    name="password" placeholder="password" type="password"
+    #password [(ngModel)]="password.value">
   </mat-form-field>
   <br>
-  <button mat-raised-button color="accent">Submit</button>
+  <button mat-raised-button color="accent" [disabled]="myForm.invalid">Submit</button>
 </form>

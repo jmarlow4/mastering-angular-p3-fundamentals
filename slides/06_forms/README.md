@@ -7,3 +7,12 @@ Let's start by generating a login component in the auth module
 ```
 $ ng g c auth/components/login-form -m auth
 ```
+
+For this to work, we're going to need to import the `FormsModule` into the module in which the component using the form is declared, in this case, `AuthModule`
+```
+// --- auth.module.ts ---
+ imports: [
+   ...
+    FormsModule
+  ],
+```
